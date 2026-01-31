@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HỆ THỐNG LẤY KEY</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#0b0f0e;
+  color:#00ff9c;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:90%;
+  max-width:420px;
+  background:#0f1b18;
+  border:2px solid #00ff9c;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 0 25px rgba(0,255,156,.35);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.time{
+  text-align:center;
+  font-size:14px;
+  opacity:.9;
+  margin-bottom:14px;
+}
+
+.select{
+  width:100%;
+  margin-bottom:10px;
+  padding:10px;
+  background:#000;
+  color:#00ff9c;
+  border:1px solid #00ff9c;
+  border-radius:6px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#00ff9c;
+  color:#000;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(.98);
+}
+
+/* ===== POPUP ===== */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.popup{
+  width:85%;
+  max-width:360px;
+  background:#2b2b2b;
+  border-radius:14px;
+  padding:24px;
+  text-align:center;
+  animation:show .25s ease;
+}
+
+.icon{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:3px solid #3cc7ff;
+  color:#3cc7ff;
+  font-size:34px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+}
+
+.popup h2{
+  color:#fff;
+  margin:12px 0 8px;
+}
+
+.popup p{
+  color:#ccc;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.loader{
+  width:34px;
+  height:34px;
+  border:4px solid #444;
+  border-top:4px solid #3cc7ff;
+  border-radius:50%;
+  margin:16px auto 0;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+@keyframes show{
+  from{opacity:0;transform:scale(.9)}
+  to{opacity:1;transform:scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>HỆ THỐNG LẤY KEY</h1>
+  <div class="time" id="time"></div>
+
+  <select class="select">
+    <option>Việt Nam</option>
+  </select>
+
+  <select class="select">
+    <option>Liên Quân</option>
+  </select>
+
+  <select class="select">
+    <option>1 Thiết bị</option>
+  </select>
+
+  <select class="select">
+    <option>24 Giờ</option>
+  </select>
+
+  <button id="getKey">🔑 Lấy Key</button>
+</div>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <div class="icon">i</div>
+    <h2>Đang xử lý...</h2>
+    <p>Hệ thống đang tạo key và sẽ chuyển hướng sau vài giây, vui lòng chờ.</p>
+    <div class="loader"></div>
+  </div>
+</div>
+
+<script>
+document.getElementById("getKey").onclick = () => {
+  document.getElementById("overlay").style.display = "flex";
+
+  setTimeout(() => {
+    window.location.href = "https://vuotnhanh.com/peq2";
+  }, 10000);
+};
+</script>
+
+<script>
+function updateTime(){
+  const now = new Date();
+
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  const ss = String(now.getSeconds()).padStart(2,'0');
+
+  const dd = String(now.getDate()).padStart(2,'0');
+  const MM = String(now.getMonth() + 1).padStart(2,'0');
+  const yyyy = now.getFullYear();
+
+  document.getElementById("time").innerText =
+    `(${hh}:${mm}:${ss} ${dd}/${MM}/${yyyy})`;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
