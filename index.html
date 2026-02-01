@@ -10,11 +10,11 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-  background:#0b0f0e;
+  background:radial-gradient(circle at top,#0e2a23,#050807);
   color:#00ff9c;
   min-height:100vh;
   display:flex;
@@ -23,13 +23,13 @@ body{
 }
 
 .container{
-  width:90%;
+  width:94%;
   max-width:420px;
-  background:#0f1b18;
+  background:#071512;
   border:2px solid #00ff9c;
-  border-radius:14px;
+  border-radius:18px;
   padding:20px;
-  box-shadow:0 0 25px rgba(0,255,156,.35);
+  box-shadow:0 0 30px rgba(0,255,156,.45);
 }
 
 h1{
@@ -40,37 +40,80 @@ h1{
 .time{
   text-align:center;
   font-size:14px;
-  opacity:.9;
+  opacity:.85;
   margin-bottom:14px;
 }
 
 .select{
   width:100%;
   margin-bottom:10px;
-  padding:10px;
+  padding:12px;
   background:#000;
   color:#00ff9c;
   border:1px solid #00ff9c;
-  border-radius:6px;
+  border-radius:8px;
 }
 
 button{
   width:100%;
-  padding:12px;
+  padding:14px;
   background:#00ff9c;
   color:#000;
-  font-size:16px;
+  font-size:17px;
   border:none;
-  border-radius:8px;
+  border-radius:12px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 button:active{
-  transform:scale(.98);
+  transform:scale(.97);
+}
+
+/* ===== DOWNLOAD BOX ===== */
+.download-box{
+  margin-top:18px;
+  display:flex;
+  gap:14px;
+  padding:14px;
+  border-radius:16px;
+  background:#000;
+  border:1px solid #00ff9c;
+  box-shadow:0 0 20px rgba(0,255,156,.4);
+}
+
+.download-left img{
+  width:92px;
+  height:92px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.download-right{
+  flex:1;
+}
+
+.download-right h3{
+  margin-bottom:4px;
+}
+
+.download-right p{
+  font-size:13px;
+  opacity:.75;
+}
+
+.download-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:10px 14px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#00ff9c,#00c3ff);
+  color:#000;
+  font-weight:bold;
+  text-decoration:none;
 }
 
 /* ===== POPUP ===== */
-
 .overlay{
   position:fixed;
   inset:0;
@@ -83,12 +126,11 @@ button:active{
 
 .popup{
   width:85%;
-  max-width:360px;
+  max-width:340px;
   background:#2b2b2b;
-  border-radius:14px;
+  border-radius:16px;
   padding:24px;
   text-align:center;
-  animation:show .25s ease;
 }
 
 .icon{
@@ -112,26 +154,20 @@ button:active{
 .popup p{
   color:#ccc;
   font-size:14px;
-  line-height:1.4;
 }
 
 .loader{
-  width:34px;
-  height:34px;
+  width:36px;
+  height:36px;
   border:4px solid #444;
   border-top:4px solid #3cc7ff;
   border-radius:50%;
-  margin:16px auto 0;
+  margin:18px auto 0;
   animation:spin .8s linear infinite;
 }
 
 @keyframes spin{
   to{transform:rotate(360deg);}
-}
-
-@keyframes show{
-  from{opacity:0;transform:scale(.9)}
-  to{opacity:1;transform:scale(1)}
 }
 </style>
 </head>
@@ -142,23 +178,37 @@ button:active{
   <h1>HỆ THỐNG LẤY KEY</h1>
   <div class="time" id="time"></div>
 
-  <select class="select">
-    <option>Việt Nam</option>
-  </select>
-
-  <select class="select">
-    <option>Liên Quân</option>
-  </select>
-
-  <select class="select">
-    <option>1 Thiết bị</option>
-  </select>
-
-  <select class="select">
-    <option>24 Giờ</option>
-  </select>
+  <select class="select"><option>Việt Nam</option></select>
+  <select class="select"><option>Liên Quân</option></select>
+  <select class="select"><option>1 Thiết bị</option></select>
+  <select class="select"><option>24 Giờ</option></select>
 
   <button id="getKey">🔑 Lấy Key</button>
+
+  <!-- DOWNLOAD 64BIT -->
+  <div class="download-box">
+    <div class="download-left">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAPePewpVJl4NLN8rxm8bzc3j1g8WOEl9Pitl0vLoF9f4tK6c_CKEH2LWO94LSmNkC7fHECGZXydiMEULlCeJWyV2OnxRJvwZ2lV56zgUmw2eVM773bucA0_30ZHJDeobZl7XQkIREC40Sg_hrMyK1ewxZ-Rxv5A7AGC48U8PuKfM62GMaCo6ZkOwJuuY/s225/1000026524.jpg">
+    </div>
+    <div class="download-right">
+      <h3>Liên Quân 64Bit</h3>
+      <p>Nhấn nút bên dưới để tải file</p>
+      <a class="download-btn" href="https://link4m.com/IQvSCx" target="_blank">⬇️ TẢI NGAY</a>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD 32BIT -->
+  <div class="download-box">
+    <div class="download-left">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAPePewpVJl4NLN8rxm8bzc3j1g8WOEl9Pitl0vLoF9f4tK6c_CKEH2LWO94LSmNkC7fHECGZXydiMEULlCeJWyV2OnxRJvwZ2lV56zgUmw2eVM773bucA0_30ZHJDeobZl7XQkIREC40Sg_hrMyK1ewxZ-Rxv5A7AGC48U8PuKfM62GMaCo6ZkOwJuuY/s225/1000026524.jpg">
+    </div>
+    <div class="download-right">
+      <h3>Liên Quân 32Bit</h3>
+      <p>Nhấn nút bên dưới để tải file</p>
+      <a class="download-btn" href="https://link4m.com/GvrLqW6" target="_blank">⬇️ TẢI NGAY</a>
+    </div>
+  </div>
+
 </div>
 
 <!-- POPUP -->
@@ -172,34 +222,100 @@ button:active{
 </div>
 
 <script>
-document.getElementById("getKey").onclick = () => {
-  document.getElementById("overlay").style.display = "flex";
+// TIME REAL
+function updateTime(){
+  const n=new Date();
+  document.getElementById("time").innerText=
+  `(${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}
+  ${String(n.getDate()).padStart(2,'0')}/${String(n.getMonth()+1).padStart(2,'0')}/${n.getFullYear()})`;
+}
+updateTime();
+setInterval(updateTime,1000);
 
-  setTimeout(() => {
-    window.location.href = "https://link4m.com/imRGtXiJ";
-  }, 10000);
+// GET KEY
+document.getElementById("getKey").onclick=()=>{
+  document.getElementById("overlay").style.display="flex";
+  setTimeout(()=>{
+    window.location.href="https://link4m.com/go/imRGtXiJ";
+  },10000);
 };
 </script>
 
-<script>
-function updateTime(){
-  const now = new Date();
+</body>
 
-  const hh = String(now.getHours()).padStart(2,'0');
-  const mm = String(now.getMinutes()).padStart(2,'0');
-  const ss = String(now.getSeconds()).padStart(2,'0');
 
-  const dd = String(now.getDate()).padStart(2,'0');
-  const MM = String(now.getMonth() + 1).padStart(2,'0');
-  const yyyy = now.getFullYear();
+<!-- CHECKING SCREEN -->
+<div id="checkScreen">
+  <div class="loader"></div>
+  <h2>Verifying connection</h2>
+  <p id="checkText">Checking system...</p>
+</div>
 
-  document.getElementById("time").innerText =
-    `(${hh}:${mm}:${ss} ${dd}/${MM}/${yyyy})`;
+<style>
+#checkScreen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #0b1220, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
 }
 
-updateTime();
-setInterval(updateTime, 1000);
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 5px solid rgba(0,255,255,0.15);
+  border-top: 5px solid #00f7ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+#checkText {
+  color: #00ff99;
+  font-size: 14px;
+  margin-top: 8px;
+}
+</style>
+
+<script>
+const texts = [
+  "Checking system integrity...",
+  "Verifying user environment...",
+  "Scanning for virtual users...",
+  "Checking bot activity...",
+  "Validating IP address...",
+  "Analyzing behavior pattern...",
+  "Checking anti-abuse layer...",
+  "Verifying request source...",
+  "Final security check...",
+  "Connection verified ✓"
+];
+
+let i = 0;
+const textEl = document.getElementById("checkText");
+
+const interval = setInterval(() => {
+  textEl.textContent = texts[i];
+  i++;
+
+  if (i === texts.length) {
+    clearInterval(interval);
+
+    // ❌ XÓA MENU SAU 10 GIÂY
+    setTimeout(() => {
+      document.getElementById("checkScreen").style.display = "none";
+    }, 800);
+  }
+}, 1000);
 </script>
 
-</body>
 </html>
